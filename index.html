@@ -103,7 +103,7 @@
       content: ""; position: absolute; inset: 0;
       background: linear-gradient(90deg, #22252a 0%, rgba(34,37,42,.92) 50%, rgba(34,37,42,.38) 100%);
     }
-    .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; padding: 100px 0; }
+    .hero-inner { position: relative; z-index: 2; max-width: 880px; padding: 108px 0; }
     .pill { display: inline-flex; border: 1px solid rgba(255,255,255,.20); background: rgba(255,255,255,.10); color: rgba(255,255,255,.9); border-radius: 999px; padding: 10px 16px; font-size: 14px; margin-bottom: 18px; }
     h1, h2, h3, p { margin-top: 0; }
     h1 { max-width: 850px; font-size: clamp(44px, 7vw, 76px); line-height: 1.02; letter-spacing: -0.045em; margin-bottom: 28px; }
@@ -187,7 +187,7 @@
 
     @media (max-width: 880px) {
       .nav { display: none; }
-      .hero-inner, .split, .work-grid, .contact-card { grid-template-columns: 1fr; }
+      .split, .work-grid, .contact-card { grid-template-columns: 1fr; }
       .hero-inner { padding: 76px 0; }
       .stats, .grid-3, .grid-2, .experience-cards, .experience-cards.two, .work-cards { grid-template-columns: 1fr; }
       .photo img { height: 380px; }
@@ -224,27 +224,6 @@
             <a class="button button-outline" href="#kontakt">Book en kort prat</a>
           </div>
         </div>
-
-        <aside class="hero-card" aria-label="Kjerneområder">
-          <div class="hero-card-title">
-            <svg class="hero-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-2.8 8.4-7 10-4.2-1.6-7-5.6-7-10V6l7-3z" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <div><strong>Når systemene må virke</strong><small>Senior erfaring. Teknisk dybde. Tett samarbeid.</small></div>
-          </div>
-          <ul class="check-list">
-            <li><span class="dot"></span>Embedded og hardware-nær software</li>
-            <li><span class="dot"></span>Industriell software, OT/IT og SCADA-nære integrasjoner</li>
-            <li><span class="dot"></span>Backend, API-er og skyplattformer</li>
-            <li><span class="dot"></span>Applikasjoner, brukerflater og AI</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section>
-      <div class="container stats">
-        <article class="stat"><strong>Senior</strong><p class="muted">Erfarne konsulenter som raskt kommer inn i kode, arkitektur og leveransekontekst.</p></article>
-        <article class="stat"><strong>Teknisk</strong><p class="muted">Sterkest i softwarelaget rundt produkter, dataflyt, integrasjoner og operative systemer.</p></article>
-        <article class="stat"><strong>Tett på</strong><p class="muted">Vi jobber som en del av kundens team — med korte beslutningsveier og direkte dialog.</p></article>
       </div>
     </section>
 

@@ -27,3 +27,8 @@ Endringer i denne versjonen:
 
 
 Oppdatert versjon: erfaring-seksjonen er byttet til case-kort gruppert etter bransjeområde.
+
+
+V4-endringer:
+- Fjernet hero-kortet “Når systemene må virke”.
+- Fjernet seksjonen “Senior / Teknisk / Tett på”.
