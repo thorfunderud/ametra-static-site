@@ -151,9 +151,24 @@
     .industry-focus h3 { font-size: 18px; margin-bottom: 6px; }
     .industry-focus p { margin: 0; color: var(--muted); line-height: 1.6; }
 
-    .experience-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .experience-list article { border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.05); border-radius: 24px; padding: 22px; display: flex; gap: 14px; color: rgba(255,255,255,.85); }
-    .experience-list .dot { margin-top: 4px; }
+    .experience-group { margin-top: 42px; }
+    .experience-group:first-of-type { margin-top: 0; }
+    .experience-title { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .experience-line { width: 44px; height: 3px; border-radius: 999px; background: var(--gold); }
+    .experience-title h3 { color: white; font-size: 22px; margin: 0; letter-spacing: -0.02em; }
+    .experience-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .experience-cards.two { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .case-card { display: flex; flex-direction: column; gap: 16px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.055); border-radius: 26px; padding: 26px; box-shadow: 0 20px 55px rgba(0,0,0,.18); transition: transform .18s ease, background .18s ease; }
+    .case-card:hover { background: rgba(255,255,255,.08); transform: translateY(-2px); }
+    .case-domain { display: inline-flex; width: max-content; border-radius: 999px; background: rgba(250,207,57,.16); color: var(--gold); font-size: 13px; font-weight: 800; padding: 7px 11px; margin-bottom: 16px; }
+    .case-card h4 { color: white; font-size: 21px; line-height: 1.22; letter-spacing: -0.025em; margin: 0 0 12px; }
+    .case-card p { color: rgba(255,255,255,.72); line-height: 1.65; margin: 0; }
+    .case-tech { color: rgba(255,255,255,.66); font-style: italic; font-size: 14px; line-height: 1.55; margin-top: 16px; }
+    .experience-cards.two .case-card { padding: 22px; border-radius: 22px; gap: 10px; box-shadow: none; }
+    .experience-cards.two .case-domain { margin-bottom: 6px; padding: 5px 9px; font-size: 12px; }
+    .experience-cards.two .case-card h4 { font-size: 19px; margin-bottom: 6px; }
+    .experience-cards.two .case-card p { line-height: 1.55; }
+    .experience-cards.two .case-tech { margin-top: 4px; font-size: 13px; }
 
     .work-section { background: white; }
     .work-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 44px; align-items: center; }
@@ -174,7 +189,7 @@
       .nav { display: none; }
       .hero-inner, .split, .work-grid, .contact-card { grid-template-columns: 1fr; }
       .hero-inner { padding: 76px 0; }
-      .stats, .grid-3, .grid-2, .experience-list, .work-cards { grid-template-columns: 1fr; }
+      .stats, .grid-3, .grid-2, .experience-cards, .experience-cards.two, .work-cards { grid-template-columns: 1fr; }
       .photo img { height: 380px; }
       .contact-content { padding: 34px; }
       .header .button { display: none; }
@@ -282,15 +297,81 @@
         <div class="section-intro">
           <p class="eyebrow">Erfaring</p>
           <h2>Erfaring fra teknisk krevende miljøer.</h2>
-          <p>Vi omtaler vanligvis ikke kundene våre offentlig, men konsulentene våre har erfaring fra komplekse leveranser innen blant annet maritim teknologi, energi, industri, finans og kritisk infrastruktur.</p>
+          <p>Vi omtaler vanligvis ikke kundene våre offentlig, men her er noen typiske oppdrag konsulentene våre har gått inn i.</p>
         </div>
-        <div class="experience-list">
-          <article><span class="dot"></span>Embedded Linux, C/C++, Yocto/Buildroot og software tett på sensorer, måleutstyr og industrielle enheter.</article>
-          <article><span class="dot"></span>SCADA-nære løsninger, OPC UA, SNMP, Modbus, HMI og dataflyt mellom operasjonelle miljøer og IT-systemer.</article>
-          <article><span class="dot"></span>Azure- og AWS-baserte plattformer med .NET, Kubernetes, eventdrevet arkitektur og sikre API-er.</article>
-          <article><span class="dot"></span>Produktutvikling for maritime, industrielle og hardware-nære systemer med krav til robusthet og lang levetid.</article>
-          <article><span class="dot"></span>Dataplattformer, dashboards, visualisering og analyse for beslutningsstøtte i tekniske og operative miljøer.</article>
-          <article><span class="dot"></span>Systemer for finans, betaling, identitet og integrasjoner der sikkerhet, kvalitet og stabilitet er avgjørende.</article>
+
+        <div class="experience-group">
+          <div class="experience-title"><span class="experience-line"></span><h3>Industri, energi og havbruk</h3></div>
+          <div class="experience-cards">
+            <article class="case-card">
+              <div>
+                <span class="case-domain">Havbruk</span>
+                <h4>Event-drevet dataplattform i sky</h4>
+                <p>Eksisterende arkitektur klarte ikke å skalere i takt med økende sensordata. Vår konsulent bidro sammen med kundens team til en skalerbar Azure-plattform basert på event-drevne mønstre og automatisk skalering.</p>
+              </div>
+              <p class="case-tech">.NET · Kubernetes · Azure · DevOps</p>
+            </article>
+            <article class="case-card">
+              <div>
+                <span class="case-domain">Energi</span>
+                <h4>Condition monitoring og prediktiv analyse</h4>
+                <p>Komplekse datastrømmer ble gjort om til operasjonell beslutningsstøtte med datamodellering og sanntidsvisualisering som varsler om avvik før kritiske feil.</p>
+              </div>
+              <p class="case-tech">Python · signalbehandling · C# · dashboards</p>
+            </article>
+            <article class="case-card">
+              <div>
+                <span class="case-domain">Industri</span>
+                <h4>Felles embedded-plattform på tvers av produktfamilien</h4>
+                <p>Fragmentert utvikling på tvers av RFID-baserte produktvarianter ble samlet i én konfigurerbar grunnmur for hardware-støtte og build-system.</p>
+              </div>
+              <p class="case-tech">Embedded Linux · Buildroot · C/C++ · RFID</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="experience-group">
+          <div class="experience-title"><span class="experience-line"></span><h3>Maritim, forsvar og kritisk infrastruktur</h3></div>
+          <div class="experience-cards two">
+            <article class="case-card">
+              <div>
+                <span class="case-domain">Luftfart</span>
+                <h4>HMI i sikkerhetskritisk miljø</h4>
+                <p>Arbeid med sentrale komponenter i et flytårn-system med strenge krav til stabilitet, oppetid og lang levetid. Bidro til bedre verifisering og testbarhet.</p>
+              </div>
+              <p class="case-tech">C/C++ · Embedded Linux · Qt · SQL</p>
+            </article>
+            <article class="case-card">
+              <div>
+                <span class="case-domain">Forsvar</span>
+                <h4>Beskyttet informasjon på edge-plattform</h4>
+                <p>Implementering av hardware-basert isolering for håndtering av graderte data på standard maskinvare — en herdet plattform med bedre kontroll på risiko.</p>
+              </div>
+              <p class="case-tech">Rust · Embedded Linux · TEE · SRIO</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="experience-group">
+          <div class="experience-title"><span class="experience-line"></span><h3>Finans og transport</h3></div>
+          <div class="experience-cards two">
+            <article class="case-card">
+              <div>
+                <span class="case-domain">Transport</span>
+                <h4>Veikantkritiske systemer</h4>
+                <p>Robuste mekanismer for feilhåndtering og overvåking i infrastruktur med høye krav til oppetid og pålitelighet.</p>
+              </div>
+              <p class="case-tech">C/C++ · VxWorks · observability · integrasjon</p>
+            </article>
+            <article class="case-card">
+              <div>
+                <span class="case-domain">Bank</span>
+                <h4>Modernisering av kjerneplattform</h4>
+                <p>Trygg migrering og modernisering av forretningskritiske tjenester med fokus på DevOps, release-strategi og regulatoriske krav.</p>
+              </div>
+              <p class="case-tech">.NET · Azure · OIDC · DevOps</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>

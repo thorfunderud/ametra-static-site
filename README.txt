@@ -24,3 +24,6 @@ Endringer i denne versjonen:
 - Fjernet kortet “AI i produkter og operative systemer”.
 - Oppdatert posisjoneringstekst og fjernet bransje-chips.
 - Fjernet punktum etter hovedsetningen “Senior softwarekompetanse for tekniske systemer”.
+
+
+Oppdatert versjon: erfaring-seksjonen er byttet til case-kort gruppert etter bransjeområde.
