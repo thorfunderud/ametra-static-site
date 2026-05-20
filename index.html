@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ametra AS | Senior softwarekompetanse for tekniske systemer</title>
+  <meta name="description" content="Ametra forsterker utviklingsteam med erfarne utviklere, tech leads og arkitekter innen embedded, industriell software, sky, data, AI og applikasjoner." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ametra.no/" />
+  <link rel="icon" href="/assets/ametra-logo.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="nb_NO" />
+  <meta property="og:site_name" content="Ametra" />
+  <meta property="og:title" content="Ametra AS | Senior softwarekompetanse" />
+  <meta property="og:description" content="Senior softwarekompetanse for embedded, industriell software, sky, data, AI og applikasjoner." />
+  <meta property="og:url" content="https://ametra.no/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ametra AS | Senior softwarekompetanse" />
+  <meta name="twitter:description" content="Senior softwarekompetanse for tekniske systemer." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ametra AS",
+    "url": "https://ametra.no/",
+    "logo": "https://ametra.no/assets/ametra-logo.svg",
+    "email": "post@ametra.no",
+    "telephone": "+47 929 23 970",
+    "vatID": "NO935593840MVA",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NO"
+    },
+    "sameAs": []
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #22252a;
+      --dark: #393e46;
+      --muted: #505762;
+      --gold: #FACF39;
+      --gold-dark: #f9c307;
+      --gold-soft: #fbdb6b;
+      --paper: #f7f7f4;
+      --white: #ffffff;
+      --line: rgba(34, 37, 42, 0.12);
+      --shadow: 0 18px 45px rgba(34, 37, 42, 0.10);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(247, 247, 244, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 0; }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { height: 38px; width: auto; }
+    .brand-sub { font-size: 12px; color: var(--muted); margin-top: 1px; }
+    .nav { display: flex; gap: 30px; font-size: 14px; font-weight: 600; color: var(--dark); }
+    .nav a:hover { color: var(--ink); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      border-radius: 999px; padding: 13px 20px; font-weight: 700;
+      border: 1px solid transparent; transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button-dark { background: var(--ink); color: white; }
+    .button-dark:hover { background: var(--dark); }
+    .button-gold { background: var(--gold); color: var(--ink); }
+    .button-gold:hover { background: var(--gold-dark); }
+    .button-outline { color: white; border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.06); }
+    .button-outline:hover { background: rgba(255,255,255,.12); }
+
+    .hero {
+      position: relative; overflow: hidden; color: white; background: var(--ink);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2400&auto=format&fit=crop');
+      background-size: cover; background-position: center; opacity: .34;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, #22252a 0%, rgba(34,37,42,.92) 50%, rgba(34,37,42,.38) 100%);
+    }
+    .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; padding: 100px 0; }
+    .pill { display: inline-flex; border: 1px solid rgba(255,255,255,.20); background: rgba(255,255,255,.10); color: rgba(255,255,255,.9); border-radius: 999px; padding: 10px 16px; font-size: 14px; margin-bottom: 18px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 850px; font-size: clamp(44px, 7vw, 76px); line-height: 1.02; letter-spacing: -0.045em; margin-bottom: 28px; }
+    .lead { max-width: 690px; color: rgba(255,255,255,.78); font-size: clamp(18px, 2vw, 21px); line-height: 1.7; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+    .hero-card { border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.10); border-radius: 30px; padding: 30px; box-shadow: 0 28px 80px rgba(0,0,0,.32); backdrop-filter: blur(14px); }
+    .hero-card-title { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .hero-icon { width: 40px; height: 40px; color: var(--gold); }
+    .hero-card strong { display: block; }
+    .hero-card small { color: rgba(255,255,255,.65); }
+    .check-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .check-list li { display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,.10); border-radius: 18px; padding: 14px; color: rgba(255,255,255,.9); font-size: 14px; }
+    .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--gold); flex: 0 0 18px; position: relative; }
+    .dot::after { content: ""; position: absolute; width: 8px; height: 4px; border-left: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: rotate(-45deg); left: 5px; top: 5px; }
+
+    section { padding: 88px 0; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .stat, .card, .work-card, .ai-card { background: white; border-radius: var(--radius); padding: 30px; box-shadow: 0 2px 8px rgba(34,37,42,.04); }
+    .stat strong { display: block; font-size: 42px; letter-spacing: -0.04em; }
+    .muted { color: var(--muted); }
+    .section-white { background: white; }
+    .section-dark { background: var(--ink); color: white; }
+    .eyebrow { font-size: 13px; letter-spacing: .22em; text-transform: uppercase; font-weight: 800; color: #b69200; margin-bottom: 14px; }
+    .section-dark .eyebrow { color: var(--gold); }
+    h2 { font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -0.035em; margin-bottom: 22px; }
+    .section-intro { max-width: 760px; margin-bottom: 48px; }
+    .section-intro p { color: var(--muted); font-size: 18px; line-height: 1.75; }
+    .section-dark .section-intro p { color: rgba(255,255,255,.70); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .service-card { background: var(--paper); border: 1px solid rgba(34,37,42,.06); transition: transform .18s ease, box-shadow .18s ease; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .service-icon, .ai-icon { width: 50px; height: 50px; border-radius: 18px; background: var(--gold); display: grid; place-items: center; margin-bottom: 22px; color: var(--ink); font-weight: 900; }
+    h3 { font-size: 21px; line-height: 1.2; margin-bottom: 12px; }
+    .card p, .work-card p, .ai-card p { color: var(--muted); margin-bottom: 0; }
+
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .photo { border-radius: 32px; overflow: hidden; box-shadow: 0 20px 55px rgba(34,37,42,.18); }
+    .photo img { width: 100%; height: 560px; object-fit: cover; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .tag { background: rgba(250,207,57,.25); color: var(--dark); padding: 9px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; }
+
+    .experience-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .experience-list article { border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.05); border-radius: 24px; padding: 22px; display: flex; gap: 14px; color: rgba(255,255,255,.85); }
+    .experience-list .dot { margin-top: 4px; }
+
+    .work-section { background: white; }
+    .work-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 44px; align-items: center; }
+    .work-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .work-card { background: var(--paper); box-shadow: none; }
+
+    .contact-card { overflow: hidden; border-radius: 32px; background: var(--dark); color: white; box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1fr; }
+    .contact-content { padding: 48px; }
+    .contact-content p { color: rgba(255,255,255,.74); font-size: 18px; line-height: 1.7; }
+    .contact-list { list-style: none; padding: 0; margin: 28px 0 0; color: rgba(255,255,255,.86); display: grid; gap: 14px; }
+    .contact-list span { color: var(--gold); font-weight: 900; margin-right: 8px; }
+    .contact-photo img { height: 100%; min-height: 420px; width: 100%; object-fit: cover; }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 14px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    @media (max-width: 880px) {
+      .nav { display: none; }
+      .hero-inner, .split, .work-grid, .contact-card { grid-template-columns: 1fr; }
+      .hero-inner { padding: 76px 0; }
+      .stats, .grid-3, .grid-2, .experience-list, .work-cards { grid-template-columns: 1fr; }
+      .photo img { height: 380px; }
+      .contact-content { padding: 34px; }
+      .header .button { display: none; }
+      section { padding: 68px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Ametra hjem">
+        <img src="/assets/ametra-logo.svg" alt="Ametra logo" />
+        <span class="brand-sub">Senior softwarekompetanse</span>
+      </a>
+      <nav class="nav" aria-label="Hovedmeny">
+        <a href="#leveranser">Hva vi leverer</a>
+        <a href="#erfaring">Erfaring</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="button button-dark" href="#kontakt">Ta kontakt</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Introduksjon">
+      <div class="container hero-inner">
+        <div>
+          <div class="pill">Oslo · Trondheim · Ålesund · Seniorfolk tett på teknologien</div>
+          <h1>Senior softwarekompetanse for tekniske systemer.</h1>
+          <p class="lead">Vi forsterker utviklingsteam med erfarne utviklere, tech leads og arkitekter innen embedded, industriell software, sky, data, AI og applikasjoner.</p>
+          <div class="hero-actions">
+            <a class="button button-gold" href="#leveranser">Se hva vi leverer →</a>
+            <a class="button button-outline" href="#kontakt">Book en kort prat</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Kjerneområder">
+          <div class="hero-card-title">
+            <svg class="hero-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-2.8 8.4-7 10-4.2-1.6-7-5.6-7-10V6l7-3z" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><strong>Når systemene må virke</strong><small>Senior erfaring. Teknisk dybde. Tett samarbeid.</small></div>
+          </div>
+          <ul class="check-list">
+            <li><span class="dot"></span>Embedded og hardware-nær software</li>
+            <li><span class="dot"></span>Industriell software, OT/IT og SCADA-nære integrasjoner</li>
+            <li><span class="dot"></span>Backend, API-er og skyplattformer</li>
+            <li><span class="dot"></span>Applikasjoner, brukerflater og AI</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container stats">
+        <article class="stat"><strong>Senior</strong><p class="muted">Erfarne konsulenter som raskt kommer inn i kode, arkitektur og leveransekontekst.</p></article>
+        <article class="stat"><strong>Teknisk</strong><p class="muted">Sterkest i softwarelaget rundt produkter, dataflyt, integrasjoner og operative systemer.</p></article>
+        <article class="stat"><strong>Tett på</strong><p class="muted">Vi jobber som en del av kundens team — med korte beslutningsveier og direkte dialog.</p></article>
+      </div>
+    </section>
+
+    <section id="leveranser" class="section-white">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Hva vi leverer</p>
+          <h2>Softwarelaget rundt produkter, plattformer og operative systemer.</h2>
+          <p>Vi går inn der utviklingsteam trenger mer kapasitet, dypere teknisk erfaring eller trygg gjennomføring.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card service-card"><div class="service-icon">CPU</div><h3>Embedded software</h3><p>C/C++, Embedded Linux, RTOS og applikasjoner tett på hardware, sensorer, kontrollenheter og edge-enheter.</p></article>
+          <article class="card service-card"><div class="service-icon">OT</div><h3>Industriell software og integrasjoner</h3><p>Datafangst, industrielle protokoller, SCADA-nære løsninger og kobling mellom OT, IT og sky.</p></article>
+          <article class="card service-card"><div class="service-icon">API</div><h3>Backend, API-er og sky</h3><p>Backend-løsninger, mikrotjenester, API-er, databaser, DevOps og skalerbare tjenester i Azure og AWS – inkludert plattformarbeid rundt AI-baserte tjenester.</p></article>
+          <article class="card service-card"><div class="service-icon">UI</div><h3>Applikasjoner og brukerflater</h3><p>Web, mobil, desktop, dashboards og forretningskritiske applikasjoner — fra React og TypeScript til Qt, WPF og Electron.</p></article>
+          <article class="card service-card"><div class="service-icon">DATA</div><h3>Data og visualisering</h3><p>Dataplattformer, rapportering, signalanalyse, bildebehandling og 2D/3D-visualisering for tekniske miljøer.</p></article>
+          <article class="card service-card"><div class="service-icon">AI</div><h3>AI i produkter og operative systemer</h3><p>LLM-integrasjon, agentiske workflows, RAG-løsninger og praktisk bruk av AI i industri-, embedded- og forretningskritiske systemer — der det gir reell verdi.</p></article>
+          <article class="card service-card"><div class="service-icon">↻</div><h3>Modernisering av legacy-systemer</h3><p>Vi hjelper med å forstå, dokumentere og modernisere store, eldre kodebaser i C/C++, .NET og Java. AI-assisterte arbeidsmetoder gjør at vi kommer raskere i mål til en lavere kostnad, med samme krav til kvalitet.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1800&auto=format&fit=crop" alt="Ingeniørarbeid og industriell teknologi" loading="lazy" /></div>
+        <div>
+          <p class="eyebrow">Posisjonering</p>
+          <h2>Et supplement til team som bygger krevende teknologi.</h2>
+          <p class="muted" style="font-size:18px;line-height:1.75">Ametra passer godt inn hos selskaper som utvikler produkter, plattformer og driftsnære løsninger med høye krav til kvalitet, sikkerhet og stabilitet.</p>
+          <div class="tags">
+            <span class="tag">Energi</span><span class="tag">Forsvar</span><span class="tag">Maritim</span><span class="tag">Industri</span><span class="tag">Havbruk</span><span class="tag">Finans</span><span class="tag">Transport</span><span class="tag">Healthtech</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="erfaring" class="section-dark">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Erfaring</p>
+          <h2>Erfaring fra teknisk krevende miljøer.</h2>
+          <p>Vi omtaler vanligvis ikke kundene våre offentlig, men konsulentene våre har erfaring fra komplekse leveranser innen blant annet maritim teknologi, energi, industri, finans og kritisk infrastruktur.</p>
+        </div>
+        <div class="experience-list">
+          <article><span class="dot"></span>Embedded Linux, C/C++, Yocto/Buildroot og software tett på sensorer, måleutstyr og industrielle enheter.</article>
+          <article><span class="dot"></span>SCADA-nære løsninger, OPC UA, SNMP, Modbus, HMI og dataflyt mellom operasjonelle miljøer og IT-systemer.</article>
+          <article><span class="dot"></span>Azure- og AWS-baserte plattformer med .NET, Kubernetes, eventdrevet arkitektur og sikre API-er.</article>
+          <article><span class="dot"></span>Produktutvikling for maritime, industrielle og hardware-nære systemer med krav til robusthet og lang levetid.</article>
+          <article><span class="dot"></span>Dataplattformer, dashboards, visualisering og analyse for beslutningsstøtte i tekniske og operative miljøer.</article>
+          <article><span class="dot"></span>Systemer for finans, betaling, identitet og integrasjoner der sikkerhet, kvalitet og stabilitet er avgjørende.</article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">Hvordan vi forholder oss til AI</p>
+          <h2>AI som del av seriøs softwareutvikling.</h2>
+          <p>AI har blitt en naturlig del av seriøs softwareutvikling — både inne i produktene og i måten utviklere jobber på. Vi har ikke et eget AI-team som lever ved siden av resten; vi forventer at konsulentene våre er trygge på moderne AI-verktøy og kan vurdere når det gir verdi og når det ikke gjør det.</p>
+          <p>For kunden betyr det høyere produktivitet, mer realistiske leveranser og bedre dømmekraft når AI faktisk skal inn i produktet.</p>
+        </div>
+        <div class="grid-3">
+          <article class="ai-card"><div class="ai-icon">AI</div><h3>AI i produktet</h3><p>Der AI løser et reelt problem og kan forsvares teknisk, operasjonelt og forretningsmessig.</p></article>
+          <article class="ai-card"><div class="ai-icon">⚙</div><h3>AI i utviklingsarbeidet</h3><p>Ikke som demo, men som praktisk del av analyse, koding, testing, dokumentasjon og modernisering.</p></article>
+          <article class="ai-card"><div class="ai-icon">✓</div><h3>Senior dømmekraft</h3><p>Når AI skal møte regulerte, industrielle eller sikkerhetskritiske miljøer, må teknologien vurderes.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-section">
+      <div class="container work-grid">
+        <div>
+          <p class="eyebrow">Slik jobber vi</p>
+          <h2>Seniorfolk inn i kundens team — uten unødvendig støy.</h2>
+        </div>
+        <div class="work-cards">
+          <article class="work-card"><h3>Rask forståelse</h3><p>Vi setter oss raskt inn i eksisterende kode, arkitektur, domene og leveransemodell.</p></article>
+          <article class="work-card"><h3>Lav overhead</h3><p>Direkte dialog med seniorfolkene som faktisk skal løse oppgaven.</p></article>
+          <article class="work-card"><h3>Komplementært</h3><p>Vi forsterker kundens egne team, produktmiljøer eller leveranseorganisasjoner.</p></article>
+          <article class="work-card"><h3>Langsiktig</h3><p>Vi bygger samarbeid som tåler mer enn ett prosjekt.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container contact-card">
+        <div class="contact-content">
+          <p class="eyebrow">Kontakt</p>
+          <h2>Trenger dere ekstra seniorkapasitet?</h2>
+          <p>Ta en kort prat med oss om hvor Ametra kan være et relevant supplement til deres utviklingsmiljø.</p>
+          <ul class="contact-list">
+            <li><span>●</span>Oslo, Trondheim og Ålesund</li>
+            <li><span>●</span><a href="mailto:post@ametra.no">post@ametra.no</a></li>
+            <li><span>●</span><a href="tel:+4792923970">+47 929 23 970</a></li>
+            <li style="color:rgba(255,255,255,.62);font-size:14px">Org.nr: 935 593 840 MVA</li>
+          </ul>
+          <a class="button button-gold" style="margin-top:34px" href="mailto:post@ametra.no?subject=Kort%20prat%20med%20Ametra">Kontakt Ametra →</a>
+        </div>
+        <div class="contact-photo"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1800&auto=format&fit=crop" alt="Team som samarbeider rundt teknologi og softwareutvikling" loading="lazy" /></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© Ametra AS</span>
+      <span>Senior softwarekompetanse for tekniske systemer</span>
+    </div>
+  </footer>
+</body>
+</html>
