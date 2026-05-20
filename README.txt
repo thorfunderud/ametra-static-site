@@ -16,3 +16,11 @@ Publisering i Azure Static Web Apps:
 Merk:
 - Siden bruker eksterne Unsplash-bilder. Bytt gjerne til lokale bilder i /assets senere for enda bedre kontroll og hastighet.
 - Canonical URL og sitemap er satt til https://ametra.no/.
+
+
+Endringer i denne versjonen:
+- Mørk logo i header, uten undertittel.
+- Ny favicon: assets/symbol-favicon.png.
+- Fjernet kortet “AI i produkter og operative systemer”.
+- Oppdatert posisjoneringstekst og fjernet bransje-chips.
+- Fjernet punktum etter hovedsetningen “Senior softwarekompetanse for tekniske systemer”.

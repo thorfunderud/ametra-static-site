@@ -7,7 +7,7 @@
   <meta name="description" content="Ametra forsterker utviklingsteam med erfarne utviklere, tech leads og arkitekter innen embedded, industriell software, sky, data, AI og applikasjoner." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ametra.no/" />
-  <link rel="icon" href="/assets/ametra-logo.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/symbol-favicon.png" type="image/png" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="nb_NO" />
@@ -146,6 +146,11 @@
     .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
     .tag { background: rgba(250,207,57,.25); color: var(--dark); padding: 9px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; }
 
+    .industry-focus { display: grid; gap: 14px; margin-top: 28px; }
+    .industry-focus article { border-left: 4px solid var(--gold); background: white; border-radius: 18px; padding: 18px 20px; box-shadow: 0 2px 8px rgba(34,37,42,.04); }
+    .industry-focus h3 { font-size: 18px; margin-bottom: 6px; }
+    .industry-focus p { margin: 0; color: var(--muted); line-height: 1.6; }
+
     .experience-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .experience-list article { border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.05); border-radius: 24px; padding: 22px; display: flex; gap: 14px; color: rgba(255,255,255,.85); }
     .experience-list .dot { margin-top: 4px; }
@@ -197,7 +202,7 @@
       <div class="container hero-inner">
         <div>
           <div class="pill">Oslo · Trondheim · Ålesund · Seniorfolk tett på teknologien</div>
-          <h1>Senior softwarekompetanse for tekniske systemer.</h1>
+          <h1>Senior softwarekompetanse for tekniske systemer</h1>
           <p class="lead">Vi forsterker utviklingsteam med erfarne utviklere, tech leads og arkitekter innen embedded, industriell software, sky, data, AI og applikasjoner.</p>
           <div class="hero-actions">
             <a class="button button-gold" href="#leveranser">Se hva vi leverer →</a>
@@ -242,7 +247,6 @@
           <article class="card service-card"><div class="service-icon">API</div><h3>Backend, API-er og sky</h3><p>Backend-løsninger, mikrotjenester, API-er, databaser, DevOps og skalerbare tjenester i Azure og AWS – inkludert plattformarbeid rundt AI-baserte tjenester.</p></article>
           <article class="card service-card"><div class="service-icon">UI</div><h3>Applikasjoner og brukerflater</h3><p>Web, mobil, desktop, dashboards og forretningskritiske applikasjoner — fra React og TypeScript til Qt, WPF og Electron.</p></article>
           <article class="card service-card"><div class="service-icon">DATA</div><h3>Data og visualisering</h3><p>Dataplattformer, rapportering, signalanalyse, bildebehandling og 2D/3D-visualisering for tekniske miljøer.</p></article>
-          <article class="card service-card"><div class="service-icon">AI</div><h3>AI i produkter og operative systemer</h3><p>LLM-integrasjon, agentiske workflows, RAG-løsninger og praktisk bruk av AI i industri-, embedded- og forretningskritiske systemer — der det gir reell verdi.</p></article>
           <article class="card service-card"><div class="service-icon">↻</div><h3>Modernisering av legacy-systemer</h3><p>Vi hjelper med å forstå, dokumentere og modernisere store, eldre kodebaser i C/C++, .NET og Java. AI-assisterte arbeidsmetoder gjør at vi kommer raskere i mål til en lavere kostnad, med samme krav til kvalitet.</p></article>
         </div>
       </div>
@@ -255,8 +259,19 @@
           <p class="eyebrow">Posisjonering</p>
           <h2>Et supplement til team som bygger krevende teknologi.</h2>
           <p class="muted" style="font-size:18px;line-height:1.75">Ametra passer godt inn hos selskaper som utvikler produkter, plattformer og driftsnære løsninger med høye krav til kvalitet, sikkerhet og stabilitet.</p>
-          <div class="tags">
-            <span class="tag">Energi</span><span class="tag">Forsvar</span><span class="tag">Maritim</span><span class="tag">Industri</span><span class="tag">Havbruk</span><span class="tag">Finans</span><span class="tag">Transport</span><span class="tag">Healthtech</span>
+          <div class="industry-focus">
+            <article>
+              <h3>Industri, energi og havbruk</h3>
+              <p>Operative miljøer, OT/SCADA, sensorikk og dataflyt mellom anlegg, IT og sky.</p>
+            </article>
+            <article>
+              <h3>Maritim og forsvar</h3>
+              <p>Embedded og hardware-nær software, sikkerhetskritiske systemer og lang levetid.</p>
+            </article>
+            <article>
+              <h3>Finans og transport</h3>
+              <p>Regulerte, software-tunge miljøer med høye krav til kvalitet og stabilitet.</p>
+            </article>
           </div>
         </div>
       </div>
