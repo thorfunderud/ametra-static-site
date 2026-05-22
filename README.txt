@@ -32,3 +32,9 @@ Oppdatert versjon: erfaring-seksjonen er byttet til case-kort gruppert etter bra
 V4-endringer:
 - Fjernet hero-kortet “Når systemene må virke”.
 - Fjernet seksjonen “Senior / Teknisk / Tett på”.
+
+
+STAGING NOTE:
+This package is configured for the Azure staging URL:
+https://calm-cliff-0f4ae4003.7.azurestaticapps.net/
+Switch canonical/OG URLs back to https://ametra.no/ before production.
