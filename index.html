@@ -82,6 +82,32 @@
     .brand img { height: 38px; width: auto; }
     .nav { display: flex; gap: 30px; font-size: 14px; font-weight: 600; color: var(--dark); }
     .nav a:hover { color: var(--ink); }
+    .menu-toggle { display: none; }
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: white;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .menu-button span,
+    .menu-button span::before,
+    .menu-button span::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--ink);
+      content: "";
+      position: relative;
+    }
+    .menu-button span::before { position: absolute; top: -7px; }
+    .menu-button span::after { position: absolute; top: 7px; }
+    .mobile-menu { display: none; }
     .button {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
       border-radius: 999px; padding: 13px 20px; font-weight: 700;
@@ -191,14 +217,61 @@
     .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
     @media (max-width: 880px) {
+      .header-inner { position: relative; padding: 14px 0; }
+      .brand img { height: 32px; }
       .nav { display: none; }
+      .header .button { display: none; }
+      .menu-button { display: inline-flex; }
+      .mobile-menu {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        z-index: 30;
+        display: none;
+        gap: 4px;
+        padding: 12px;
+        background: rgba(247, 247, 244, 0.98);
+        border: 1px solid var(--line);
+        border-radius: 0 0 22px 22px;
+        box-shadow: 0 18px 38px rgba(34,37,42,.12);
+      }
+      .mobile-menu a {
+        display: block;
+        padding: 14px 16px;
+        border-radius: 14px;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .mobile-menu a:hover { background: white; }
+      .menu-toggle:checked ~ .mobile-menu { display: grid; }
       .split, .work-grid, .contact-card { grid-template-columns: 1fr; }
-      .hero-inner { padding: 76px 0; }
+      .hero-inner { padding: 68px 0 72px; }
+      h1 {
+        font-size: clamp(36px, 10vw, 50px);
+        line-height: 1.06;
+        letter-spacing: -0.035em;
+        max-width: 100%;
+      }
+      .pill {
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.45;
+      }
+      .hero-actions { gap: 12px; }
       .stats, .grid-3, .grid-2, .experience-cards, .experience-cards.two, .work-cards { grid-template-columns: 1fr; }
       .photo img { height: 380px; }
       .contact-content { padding: 34px; }
-      .header .button { display: none; }
       section { padding: 68px 0; }
+    }
+    @media (max-width: 520px) {
+      .container { width: min(1120px, calc(100% - 32px)); }
+      .hero-inner { padding: 56px 0 62px; }
+      h1 { font-size: clamp(34px, 10.5vw, 44px); }
+      .lead { font-size: 17px; line-height: 1.65; }
+      .hero-actions .button { width: 100%; }
+      .photo img, .contact-photo img { height: 320px; min-height: 320px; }
+      .contact-content { padding: 28px; }
     }
   </style>
 </head>
@@ -214,6 +287,13 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
       <a class="button button-dark" href="#kontakt">Ta kontakt</a>
+      <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Åpne meny" />
+      <label class="menu-button" for="menu-toggle" aria-label="Åpne meny"><span></span></label>
+      <nav class="mobile-menu" aria-label="Mobilmeny">
+        <a href="#leveranser">Hva vi leverer</a>
+        <a href="#erfaring">Erfaring</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
     </div>
   </header>
 
@@ -222,7 +302,7 @@
       <div class="container hero-inner">
         <div class="hero-content">
           <div class="pill">Oslo · Trondheim · Ålesund · Folk tett på teknologien</div>
-          <h1>Senior softwarekompetanse for tekniske systemer</h1>
+          <h1>Senior software<wbr>kompetanse for tekniske systemer</h1>
           <p class="lead">Vi forsterker utviklingsteam med erfarne utviklere, tech leads og arkitekter innen embedded, industriell software, sky, data, AI og applikasjoner.</p>
           <div class="hero-actions">
             <a class="button button-gold" href="#leveranser">Se hva vi leverer →</a>
