@@ -80,29 +80,6 @@
     .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 0; }
     .brand { display: flex; align-items: center; gap: 14px; }
     .brand img { height: 38px; width: auto; }
-
-    .theme-switch {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.72);
-      color: var(--ink);
-      border-radius: 999px;
-      padding: 7px 11px 7px 8px;
-      font-size: 13px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: background .18s ease, border-color .18s ease, color .18s ease;
-    }
-    .theme-switch-knob {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      background: var(--gold);
-      box-shadow: inset 0 0 0 1px rgba(34,37,42,.08);
-    }
-    .theme-switch:hover { background: white; }
     .nav { display: flex; gap: 30px; font-size: 14px; font-weight: 600; color: var(--dark); }
     .nav a:hover { color: var(--ink); }
     .menu-toggle { display: none; }
@@ -141,6 +118,24 @@
     .button-dark:hover { background: var(--dark); }
     .button-gold { background: var(--gold); color: var(--ink); }
     .button-gold:hover { background: var(--gold-dark); }
+    .header-cta { white-space: nowrap; }
+    @media (prefers-color-scheme: dark) {
+      .header .header-cta { background: var(--gold); color: var(--ink); }
+      .header .header-cta:hover { background: var(--gold-dark); }
+    }
+    html[data-theme="dark"] .header .header-cta,
+    body.dark .header .header-cta,
+    body.dark-mode .header .header-cta,
+    body.theme-dark .header .header-cta {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    html[data-theme="dark"] .header .header-cta:hover,
+    body.dark .header .header-cta:hover,
+    body.dark-mode .header .header-cta:hover,
+    body.theme-dark .header .header-cta:hover {
+      background: var(--gold-dark);
+    }
     .button-outline { color: white; border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.06); }
     .button-outline:hover { background: rgba(255,255,255,.12); }
 
@@ -239,86 +234,11 @@
     footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 14px; }
     .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
-
-    body.theme-dark {
-      --ink: #f7f7f4;
-      --dark: #d7dbe2;
-      --muted: #b9c0ca;
-      --paper: #22252a;
-      --white: #393e46;
-      --line: rgba(255,255,255,.14);
-      --shadow: 0 22px 55px rgba(0,0,0,.30);
-      background: #22252a;
-      color: #f7f7f4;
-    }
-    body.theme-dark .header {
-      background: rgba(34, 37, 42, 0.92);
-      border-bottom-color: rgba(255,255,255,.12);
-    }
-    body.theme-dark .brand img { filter: invert(1) brightness(1.4); }
-    body.theme-dark .nav { color: rgba(255,255,255,.78); }
-    body.theme-dark .nav a:hover { color: white; }
-    body.theme-dark .theme-switch {
-      background: rgba(255,255,255,.08);
-      color: white;
-      border-color: rgba(255,255,255,.16);
-    }
-    body.theme-dark .theme-switch:hover { background: rgba(255,255,255,.13); }
-    body.theme-dark .menu-button { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.16); }
-    body.theme-dark .menu-button span,
-    body.theme-dark .menu-button span::before,
-    body.theme-dark .menu-button span::after { background: white; }
-    body.theme-dark .mobile-menu {
-      background: rgba(34,37,42,.98);
-      border-color: rgba(255,255,255,.14);
-      box-shadow: 0 18px 38px rgba(0,0,0,.32);
-    }
-    body.theme-dark .mobile-menu a { color: white; }
-    body.theme-dark .mobile-menu a:hover { background: rgba(255,255,255,.08); }
-    body.theme-dark .section-white,
-    body.theme-dark .work-section { background: #2b3037; }
-    body.theme-dark .section-dark { background: #171a1f; }
-    body.theme-dark .card,
-    body.theme-dark .work-card,
-    body.theme-dark .ai-card,
-    body.theme-dark .stat {
-      background: #393e46;
-      color: #f7f7f4;
-      border-color: rgba(255,255,255,.08);
-    }
-    body.theme-dark .service-card,
-    body.theme-dark .work-card { background: #303640; }
-    body.theme-dark .card p,
-    body.theme-dark .work-card p,
-    body.theme-dark .ai-card p,
-    body.theme-dark .muted,
-    body.theme-dark .section-intro p { color: #b9c0ca; }
-    body.theme-dark .area p { color: #b9c0ca; }
-    body.theme-dark .tag { color: #f7f7f4; }
-
-    body.theme-dark .industry-focus article {
-      background: #303640;
-      border-left-color: var(--gold);
-      box-shadow: 0 14px 34px rgba(0,0,0,.18);
-    }
-    body.theme-dark .industry-focus h3 { color: #f7f7f4; }
-    body.theme-dark .industry-focus p { color: #b9c0ca; }
-    body.theme-dark .contact-card {
-      background: #393e46;
-      color: white;
-      box-shadow: 0 18px 45px rgba(34, 37, 42, 0.10);
-    }
-    body.theme-dark .contact-content p { color: rgba(255,255,255,.74); }
-    body.theme-dark .contact-list { color: rgba(255,255,255,.86); }
-    body.theme-dark footer { border-top-color: rgba(255,255,255,.14); color: #b9c0ca; }
-
     @media (max-width: 880px) {
       .header-inner { position: relative; padding: 14px 0; }
       .brand img { height: 32px; }
       .nav { display: none; }
-      .header > .container > .button { display: none; }
-      .theme-switch { margin-left: auto; padding: 7px 9px 7px 7px; }
-      .theme-switch-label { display: none; }
+      .header .button { display: none; }
       .menu-button { display: inline-flex; }
       .mobile-menu {
         position: absolute;
@@ -384,11 +304,7 @@
         <a href="#erfaring">Erfaring</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
-      <button class="theme-switch" type="button" id="theme-switch" aria-pressed="false" aria-label="Bytt mellom lys og mørk versjon">
-        <span class="theme-switch-knob" aria-hidden="true"></span>
-        <span class="theme-switch-label">Mørk</span>
-      </button>
-      <a class="button button-dark" href="#kontakt">Ta kontakt</a>
+      <a class="button button-dark header-cta" href="#kontakt">Ta kontakt</a>
       <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Åpne meny" />
       <label class="menu-button" for="menu-toggle" aria-label="Åpne meny"><span></span></label>
       <nav class="mobile-menu" aria-label="Mobilmeny">
@@ -596,27 +512,5 @@
       <span>Senior software engineering for produkter og systemer</span>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      var button = document.getElementById('theme-switch');
-      if (!button) return;
-      var label = button.querySelector('.theme-switch-label');
-      var saved = localStorage.getItem('ametra-theme');
-
-      function setTheme(theme) {
-        var dark = theme === 'dark';
-        document.body.classList.toggle('theme-dark', dark);
-        button.setAttribute('aria-pressed', dark ? 'true' : 'false');
-        if (label) label.textContent = dark ? 'Lys' : 'Mørk';
-        localStorage.setItem('ametra-theme', theme);
-      }
-
-      setTheme(saved === 'dark' ? 'dark' : 'light');
-      button.addEventListener('click', function () {
-        setTheme(document.body.classList.contains('theme-dark') ? 'light' : 'dark');
-      });
-    })();
-  </script>
 </body>
 </html>
