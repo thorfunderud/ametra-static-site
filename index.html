@@ -82,6 +82,24 @@
     .brand img { height: 38px; width: auto; }
     .nav { display: flex; gap: 30px; font-size: 14px; font-weight: 600; color: var(--dark); }
     .nav a:hover { color: var(--ink); }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
+    .theme-toggle-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 70px;
+      min-height: 44px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .theme-toggle-button:hover { transform: translateY(-1px); background: #f1f1ec; }
     .menu-toggle { display: none; }
     .menu-button {
       display: none;
@@ -234,11 +252,57 @@
     footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 14px; }
     .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
+    html[data-theme="dark"] body { background: #22252a; color: #f7f7f4; }
+    html[data-theme="dark"] .header {
+      background: rgba(34, 37, 42, 0.94);
+      border-bottom-color: rgba(255,255,255,.12);
+    }
+    html[data-theme="dark"] .nav { color: rgba(255,255,255,.74); }
+    html[data-theme="dark"] .nav a:hover { color: white; }
+    html[data-theme="dark"] .theme-toggle-button,
+    html[data-theme="dark"] .menu-button {
+      background: #393e46;
+      color: #f7f7f4;
+      border-color: rgba(255,255,255,.16);
+    }
+    html[data-theme="dark"] .theme-toggle-button:hover,
+    html[data-theme="dark"] .menu-button:hover { background: #505762; }
+    html[data-theme="dark"] .menu-button span,
+    html[data-theme="dark"] .menu-button span::before,
+    html[data-theme="dark"] .menu-button span::after { background: #f7f7f4; }
+    html[data-theme="dark"] .mobile-menu {
+      background: rgba(34,37,42,.98);
+      border-color: rgba(255,255,255,.12);
+      box-shadow: 0 18px 38px rgba(0,0,0,.28);
+    }
+    html[data-theme="dark"] .mobile-menu a { color: #f7f7f4; }
+    html[data-theme="dark"] .mobile-menu a:hover { background: #393e46; }
+    html[data-theme="dark"] .section-white,
+    html[data-theme="dark"] .work-section { background: #22252a; }
+    html[data-theme="dark"] .stat,
+    html[data-theme="dark"] .card,
+    html[data-theme="dark"] .ai-card { background: #393e46; color: #f7f7f4; }
+    html[data-theme="dark"] .service-card,
+    html[data-theme="dark"] .work-card { background: #2b2f36; border-color: rgba(255,255,255,.08); }
+    html[data-theme="dark"] .muted,
+    html[data-theme="dark"] .section-intro p,
+    html[data-theme="dark"] .card p,
+    html[data-theme="dark"] .work-card p,
+    html[data-theme="dark"] .ai-card p { color: rgba(255,255,255,.70); }
+    html[data-theme="dark"] .area {
+      background: rgba(255,255,255,.05);
+      border-color: rgba(250,207,57,.82);
+    }
+    html[data-theme="dark"] .area p { color: rgba(255,255,255,.70); }
+    html[data-theme="dark"] footer { border-top-color: rgba(255,255,255,.12); color: rgba(255,255,255,.62); }
+
     @media (max-width: 880px) {
       .header-inner { position: relative; padding: 14px 0; }
       .brand img { height: 32px; }
       .nav { display: none; }
-      .header .button { display: none; }
+      .header-actions { margin-left: auto; gap: 8px; }
+      .header .header-cta { display: none; }
+      .theme-toggle-button { min-width: 64px; min-height: 42px; padding: 9px 12px; }
       .menu-button { display: inline-flex; }
       .mobile-menu {
         position: absolute;
@@ -304,7 +368,10 @@
         <a href="#erfaring">Erfaring</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
-      <a class="button button-dark header-cta" href="#kontakt">Ta kontakt</a>
+      <div class="header-actions">
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Bytt mellom mørk og lys modus">Mørk</button>
+        <a class="button button-dark header-cta" href="#kontakt">Ta kontakt</a>
+      </div>
       <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Åpne meny" />
       <label class="menu-button" for="menu-toggle" aria-label="Åpne meny"><span></span></label>
       <nav class="mobile-menu" aria-label="Mobilmeny">
@@ -512,5 +579,34 @@
       <span>Senior software engineering for produkter og systemer</span>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var storageKey = "ametra-theme";
+      var root = document.documentElement;
+      var button = document.querySelector("[data-theme-toggle]");
+      var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var savedTheme = null;
+      try { savedTheme = localStorage.getItem(storageKey); } catch (e) {}
+
+      function applyTheme(theme) {
+        root.setAttribute("data-theme", theme);
+        if (button) {
+          button.textContent = theme === "dark" ? "Lys" : "Mørk";
+          button.setAttribute("aria-label", theme === "dark" ? "Bytt til lys modus" : "Bytt til mørk modus");
+        }
+      }
+
+      applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
+
+      if (button) {
+        button.addEventListener("click", function () {
+          var nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          applyTheme(nextTheme);
+          try { localStorage.setItem(storageKey, nextTheme); } catch (e) {}
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
