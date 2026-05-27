@@ -38,3 +38,6 @@ STAGING NOTE:
 This package is configured for the Azure staging URL:
 https://calm-cliff-0f4ae4003.7.azurestaticapps.net/
 Switch canonical/OG URLs back to https://ametra.no/ before production.
+
+
+v29: Dark mode refined with premium contrast, layered surfaces, and dark positioning cards.
