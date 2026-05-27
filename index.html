@@ -136,82 +136,6 @@
     body.theme-dark .header .header-cta:hover {
       background: var(--gold-dark);
     }
-
-    .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 44px;
-      padding: 10px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.86);
-      color: var(--ink);
-      font: inherit;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
-    }
-    .theme-toggle:hover { transform: translateY(-1px); background: white; }
-    .theme-toggle-icon { font-size: 17px; line-height: 1; }
-
-    html[data-theme="dark"] body {
-      background: var(--ink);
-      color: var(--paper);
-    }
-    html[data-theme="dark"] .header {
-      background: rgba(34, 37, 42, 0.94);
-      border-bottom-color: rgba(255,255,255,.12);
-    }
-    html[data-theme="dark"] .nav { color: rgba(255,255,255,.78); }
-    html[data-theme="dark"] .nav a:hover { color: white; }
-    html[data-theme="dark"] .theme-toggle {
-      background: rgba(255,255,255,.08);
-      color: white;
-      border-color: rgba(255,255,255,.18);
-    }
-    html[data-theme="dark"] .theme-toggle:hover { background: rgba(255,255,255,.14); }
-    html[data-theme="dark"] .menu-button {
-      background: rgba(255,255,255,.08);
-      border-color: rgba(255,255,255,.18);
-    }
-    html[data-theme="dark"] .menu-button span,
-    html[data-theme="dark"] .menu-button span::before,
-    html[data-theme="dark"] .menu-button span::after { background: white; }
-    html[data-theme="dark"] .mobile-menu {
-      background: rgba(34,37,42,.98);
-      border-color: rgba(255,255,255,.12);
-    }
-    html[data-theme="dark"] .mobile-menu a { color: white; }
-    html[data-theme="dark"] .mobile-menu a:hover { background: rgba(255,255,255,.08); }
-    html[data-theme="dark"] .section-white,
-    html[data-theme="dark"] .work-section { background: #2b2f35; }
-    html[data-theme="dark"] .stat,
-    html[data-theme="dark"] .card,
-    html[data-theme="dark"] .work-card,
-    html[data-theme="dark"] .ai-card { background: #393e46; color: white; }
-    html[data-theme="dark"] .service-card { background: #393e46; border-color: rgba(255,255,255,.08); }
-    html[data-theme="dark"] .muted,
-    html[data-theme="dark"] .section-intro p,
-    html[data-theme="dark"] .card p,
-    html[data-theme="dark"] .work-card p,
-    html[data-theme="dark"] .ai-card p,
-    html[data-theme="dark"] .positioning-list p { color: rgba(255,255,255,.70); }
-    html[data-theme="dark"] .industry-focus article {
-      background: #393e46;
-      color: white;
-      border-left-color: var(--gold);
-      border-top: 1px solid rgba(255,255,255,.08);
-      border-right: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      box-shadow: none;
-    }
-    html[data-theme="dark"] .industry-focus h3 { color: white; }
-    html[data-theme="dark"] .industry-focus p { color: rgba(255,255,255,.70); }
-    html[data-theme="dark"] footer { border-top-color: rgba(255,255,255,.12); color: rgba(255,255,255,.62); }
-
     .button-outline { color: white; border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.06); }
     .button-outline:hover { background: rgba(255,255,255,.12); }
 
@@ -315,14 +239,6 @@
       .brand img { height: 32px; }
       .nav { display: none; }
       .header .button { display: none; }
-
-      .theme-toggle {
-        min-width: 44px;
-        padding: 10px 12px;
-        margin-left: auto;
-      }
-      .theme-toggle-text { display: none; }
-
       .menu-button { display: inline-flex; }
       .mobile-menu {
         position: absolute;
@@ -389,10 +305,6 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
       <a class="button button-dark header-cta" href="#kontakt">Ta kontakt</a>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Bytt mellom lys og mørk modus" aria-pressed="false">
-        <span class="theme-toggle-icon" aria-hidden="true">◐</span>
-        <span class="theme-toggle-text">Mørk</span>
-      </button>
       <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Åpne meny" />
       <label class="menu-button" for="menu-toggle" aria-label="Åpne meny"><span></span></label>
       <nav class="mobile-menu" aria-label="Mobilmeny">
@@ -486,7 +398,7 @@
                 <h4>Condition monitoring og prediktiv analyse</h4>
                 <p>Komplekse datastrømmer ble gjort om til operasjonell beslutningsstøtte med datamodellering og sanntidsvisualisering som varsler om avvik før de utvikler seg til kritiske feil — bedre beslutningsgrunnlag og færre uforutsette stopp.</p>
               </div>
-              <p class="case-tech">Python · signalbehandling · C# · dashboards</p>
+              <p class="case-tech">C# · C++ · PostgreSQL · dashboards</p>
             </article>
             <article class="case-card">
               <div>
@@ -508,7 +420,7 @@
                 <h4>HMI i sikkerhetskritisk miljø</h4>
                 <p>Arbeid med sentrale komponenter i et flytårn-system med strenge krav til stabilitet, oppetid og lang levetid. Bidro til bedre verifisering og testbarhet, og dermed mer forutsigbare leveranser.</p>
               </div>
-              <p class="case-tech">C/C++ · Embedded Linux · Qt · SQL</p>
+              <p class="case-tech">C/C++ · Linux · Qt · SQL</p>
             </article>
             <article class="case-card">
               <div>
@@ -516,7 +428,7 @@
                 <h4>Beskyttet informasjon på edge-plattform</h4>
                 <p>Implementering av hardware-basert isolering for håndtering av graderte data på standard maskinvare — en herdet plattform med bedre kontroll på risiko i graderte miljøer.</p>
               </div>
-              <p class="case-tech">Rust · Embedded Linux · TEE · SRIO</p>
+              <p class="case-tech">Rust · TEE · Linux</p>
             </article>
           </div>
         </div>
@@ -538,7 +450,7 @@
                 <h4>Modernisering av kjerneplattform</h4>
                 <p>Trygg migrering og modernisering av forretningskritiske tjenester med fokus på DevOps, release-strategi og regulatoriske krav — som ga økt endringstakt med kontroll på risiko.</p>
               </div>
-              <p class="case-tech">.NET · Azure · OIDC · DevOps</p>
+              <p class="case-tech">.NET · OIDC · IdentityServer · DevOps</p>
             </article>
           </div>
         </div>
@@ -600,34 +512,5 @@
       <span>Senior software engineering for produkter og systemer</span>
     </div>
   </footer>
-
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const toggle = document.getElementById('theme-toggle');
-      if (!toggle) return;
-
-      const saved = localStorage.getItem('ametra-theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const initialTheme = saved || (prefersDark ? 'dark' : 'light');
-
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-        const text = toggle.querySelector('.theme-toggle-text');
-        const icon = toggle.querySelector('.theme-toggle-icon');
-        if (text) text.textContent = theme === 'dark' ? 'Lys' : 'Mørk';
-        if (icon) icon.textContent = theme === 'dark' ? '☀' : '◐';
-      }
-
-      applyTheme(initialTheme);
-
-      toggle.addEventListener('click', function () {
-        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('ametra-theme', next);
-        applyTheme(next);
-      });
-    }());
-  </script>
 </body>
 </html>
