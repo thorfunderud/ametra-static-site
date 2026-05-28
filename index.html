@@ -364,6 +364,163 @@
       color: rgba(255,255,255,.62);
     }
 
+
+    .team-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(249,195,7,.10), transparent 28%),
+        linear-gradient(180deg, #1b1f25 0%, #15181d 100%);
+      color: #f4f1e8;
+    }
+    .team-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: .16;
+      pointer-events: none;
+    }
+    .team-section .container {
+      position: relative;
+      z-index: 1;
+    }
+    .team-section .eyebrow { color: #f9c307; }
+    .team-intro {
+      max-width: 910px;
+      margin-bottom: 44px;
+    }
+    .team-intro p {
+      margin: 0 0 16px;
+      color: rgba(244,241,232,.68);
+      font-size: 18px;
+      line-height: 1.72;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .team-card {
+      min-height: 224px;
+      display: flex;
+      flex-direction: column;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018)),
+        #242a32;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.26);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-3px);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025)),
+        #2c333d;
+      box-shadow: 0 24px 70px rgba(0,0,0,.34);
+      border-color: rgba(249,195,7,.42);
+    }
+    .team-person-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .team-avatar {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      flex: 0 0 58px;
+      object-fit: cover;
+      background: #303740;
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 8px 24px rgba(0,0,0,.28);
+      filter: contrast(1.03);
+    }
+    .team-avatar-placeholder {
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: rgba(244,241,232,.56);
+      background: linear-gradient(135deg,#343b45,#252b33);
+    }
+    .team-name {
+      margin: 0;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.2;
+      letter-spacing: -.01em;
+    }
+    .team-role {
+      margin-top: 4px;
+      color: rgba(244,241,232,.62);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .team-highlight {
+      margin: 0 0 16px;
+      color: rgba(244,241,232,.68);
+      font-size: 14px;
+      line-height: 1.58;
+    }
+    .team-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      align-items: flex-start;
+    }
+    .team-tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(244,241,232,.82);
+      background: #303740;
+      border: 1px solid rgba(255,255,255,.08);
+      line-height: 1;
+    }
+    .team-more { display: contents; }
+    .team-more summary {
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+      color: #f9c307;
+      background: rgba(249,195,7,.10);
+      border-color: rgba(249,195,7,.24);
+    }
+    .team-more summary::-webkit-details-marker { display: none; }
+    .team-more[open] summary { display: none; }
+    .team-extra-tags {
+      display: contents;
+    }
+    .team-future-card {
+      border-style: dashed;
+      background:
+        linear-gradient(180deg, rgba(249,195,7,.055), rgba(255,255,255,.012)),
+        rgba(36,42,50,.62);
+    }
+    .team-future-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      flex: 0 0 58px;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      font-weight: 500;
+      color: rgba(249,195,7,.74);
+      background: rgba(249,195,7,.10);
+      border: 1px dashed rgba(249,195,7,.28);
+    }
+
     @media (max-width: 880px) {
       .header-inner { position: relative; padding: 14px 0; }
       .brand img { height: 32px; }
@@ -409,7 +566,7 @@
         line-height: 1.45;
       }
       .hero-actions { gap: 12px; }
-      .stats, .grid-3, .grid-2, .experience-cards, .experience-cards.two, .work-cards { grid-template-columns: 1fr; }
+      .stats, .grid-3, .grid-2, .experience-cards, .experience-cards.two, .work-cards, .team-grid { grid-template-columns: 1fr; }
       .photo img { height: 380px; }
       .featured-photo .photo-overlay { left: 20px; right: 20px; bottom: 18px; }
       .featured-photo .photo-overlay strong { font-size: 22px; }
@@ -559,7 +716,9 @@
       <nav class="nav" aria-label="Hovedmeny">
         <a href="#leveranser">Hva vi leverer</a>
         <a href="#erfaring">Erfaring</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="#team">Hvem vi er</a>
+        <a href="#team">Hvem vi er</a>
+          <a href="#kontakt">Kontakt</a>
       </nav>
       <div class="header-actions">
         <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Bytt mellom mørk og lys modus">Mørk</button>
@@ -757,6 +916,189 @@
           <article class="work-card"><h3>Rask forståelse</h3><p>Vi setter oss raskt inn i eksisterende kode, arkitektur, domene og leveransemodell.</p></article>
           <article class="work-card"><h3>Komplementært</h3><p>Vi forsterker kundens egne team, produktmiljøer eller leveranseorganisasjoner.</p></article>
           <article class="work-card"><h3>Langsiktig</h3><p>Vi bygger samarbeid som tåler mer enn ett prosjekt.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="team" class="team-section">
+      <div class="container">
+        <p class="eyebrow">Hvem vi er</p>
+        <h2>Et miljø av seniorutviklere</h2>
+        <div class="team-intro">
+          <p>Ametra er seniorutviklere, tech leads og arkitekter — i snitt over 15 års erfaring hver. Vi bidrar med utviklingskapasitet og spisskompetanse, fra idé og kravspesifisering til ferdig løsning.</p>
+          <p>Folkene våre har bygget systemer som brukes i alt fra industri og energi til romfart og finans — fra kontroll- og overvåkningssystemer, innebygde løsninger og sikkerhetskritisk programvare, til moderne web- og mobilapplikasjoner.</p>
+          <p>Vi jobber i kundens team, ikke på utsiden. Det gir raskere læring, økt gjennomføringskraft og mer varige resultater.</p>
+        </div>
+
+        <div class="team-grid">
+
+          <article class="team-card">
+            <div class="team-person-top">
+              <img class="team-avatar" src="/assets/team/thor-funderud.webp" alt="Portrett av Thor Funderud" loading="lazy" />
+              <div>
+                <h3 class="team-name">Thor Funderud</h3>
+                <div class="team-role">Daglig leder</div>
+              </div>
+            </div>
+            <p class="team-highlight">Salg, rekruttering og forretningsutvikling — kobler kundens behov med riktig kompetanse.</p>
+            <div class="team-tags">
+              <span class="team-tag">Forretningsutvikling</span><span class="team-tag">Rekruttering</span>
+              
+              <details class="team-more">
+                <summary class="team-tag team-more-trigger" aria-label="Vis 4 flere teknologier">+4</summary>
+                <div class="team-extra-tags"><span class="team-tag">Salg</span><span class="team-tag">Kundeutvikling</span><span class="team-tag">Partnerdialog</span><span class="team-tag">Teambygging</span></div>
+              </details>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-person-top">
+              <img class="team-avatar" src="/assets/team/christian-heen-carlsen.webp" alt="Portrett av Christian Heen Carlsen" loading="lazy" />
+              <div>
+                <h3 class="team-name">Christian Heen Carlsen</h3>
+                <div class="team-role">Spesialist, embedded</div>
+              </div>
+            </div>
+            <p class="team-highlight">Kybernetiker med tyngde på lavnivå-software, sensorintegrasjon og sikkerhetskritiske systemer.</p>
+            <div class="team-tags">
+              <span class="team-tag">C/C++</span><span class="team-tag">Robotics control</span>
+              
+              <details class="team-more">
+                <summary class="team-tag team-more-trigger" aria-label="Vis 5 flere teknologier">+5</summary>
+                <div class="team-extra-tags"><span class="team-tag">Rust</span><span class="team-tag">Embedded Linux</span><span class="team-tag">RTOS</span><span class="team-tag">TEE</span><span class="team-tag">Sensorintegrasjon</span></div>
+              </details>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-person-top">
+              <img class="team-avatar" src="/assets/team/eirik-sneen.webp" alt="Portrett av Eirik Sneen" loading="lazy" />
+              <div>
+                <h3 class="team-name">Eirik Sneen</h3>
+                <div class="team-role">Senior systemingeniør</div>
+              </div>
+            </div>
+            <p class="team-highlight">25 års erfaring fra kritisk infrastruktur og komplekse systemarkitekturer.</p>
+            <div class="team-tags">
+              <span class="team-tag">C++ &amp; .NET</span><span class="team-tag">Sikkerhetskritisk</span>
+              
+              <details class="team-more">
+                <summary class="team-tag team-more-trigger" aria-label="Vis 5 flere teknologier">+5</summary>
+                <div class="team-extra-tags"><span class="team-tag">Linux</span><span class="team-tag">VxWorks</span><span class="team-tag">Integrasjon</span><span class="team-tag">Observability</span><span class="team-tag">Arkitektur</span></div>
+              </details>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-person-top">
+              <img class="team-avatar" src="/assets/team/erlend-andreas-lorentzen.webp" alt="Portrett av Erlend Andreas Lorentzen" loading="lazy" />
+              <div>
+                <h3 class="team-name">Erlend Andreas Lorentzen</h3>
+                <div class="team-role">Spesialist, embedded</div>
+              </div>
+            </div>
+            <p class="team-highlight">Sivilingeniør med tyngde på maskinvarenær utvikling i Python og C/C++, og embedded Linux.</p>
+            <div class="team-tags">
+              <span class="team-tag">C/C++ &amp; Rust</span><span class="team-tag">Embedded Linux</span>
+              
+              <details class="team-more">
+                <summary class="team-tag team-more-trigger" aria-label="Vis 5 flere teknologier">+5</summary>
+                <div class="team-extra-tags"><span class="team-tag">Buildroot</span><span class="team-tag">Yocto</span><span class="team-tag">Python</span><span class="team-tag">RFID</span><span class="team-tag">Hardware-nært</span></div>
+              </details>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-person-top">
+              <img class="team-avatar" src="/assets/team/johan-hoye.webp" alt="Portrett av Johan Høye" loading="lazy" />
+              <div>
+                <h3 class="team-name">Johan Høye</h3>
+                <div class="team-role">Senior systemutvikler</div>
+              </div>
+            </div>
+            <p class="team-highlight">Fullstack-arkitekt med bakgrunn innen AI, spesialisert på dataplattformer for havbruk og finans.</p>
+            <div class="team-tags">
+              <span class="team-tag">.NET Core</span><span class="team-tag">Fullstack</span>
+              
+              <details class="team-more">
+                <summary class="team-tag team-more-trigger" aria-label="Vis 5 flere teknologier">+5</summary>
+                <div class="team-extra-tags"><span class="team-tag">Azure</span><span class="team-tag">Dataplattformer</span><span class="team-tag">React</span><span class="team-tag">SQL</span><span class="team-tag">AI</span></div>
+              </details>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-person-top">
+              <div class="team-avatar team-avatar-placeholder" aria-label="Portrett mangler">MP</div>
+              <div>
+                <h3 class="team-name">Martin Pales</h3>
+                <div class="team-role">Senior systemingeniør</div>
+              </div>
+            </div>
+            <p class="team-highlight">Sanntidsovervåking og systemarkitektur for kritiske kontrollsystemer, særlig i energi.</p>
+            <div class="team-tags">
+              <span class="team-tag">C/C++</span><span class="team-tag">Linux/Unix</span>
+              
+              <details class="team-more">
+                <summary class="team-tag team-more-trigger" aria-label="Vis 5 flere teknologier">+5</summary>
+                <div class="team-extra-tags"><span class="team-tag">C#</span><span class="team-tag">PostgreSQL</span><span class="team-tag">Condition monitoring</span><span class="team-tag">Dashboards</span><span class="team-tag">Systemarkitektur</span></div>
+              </details>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-person-top">
+              <img class="team-avatar" src="/assets/team/mattias-dahlberg.webp" alt="Portrett av Mattias Dahlberg" loading="lazy" />
+              <div>
+                <h3 class="team-name">Mattias Dahlberg</h3>
+                <div class="team-role">Senior systemutvikler</div>
+              </div>
+            </div>
+            <p class="team-highlight">Over 20 års erfaring, særlig fra robuste .NET-løsninger i finans.</p>
+            <div class="team-tags">
+              <span class="team-tag">.NET Core</span><span class="team-tag">Systemarkitektur</span>
+              
+              <details class="team-more">
+                <summary class="team-tag team-more-trigger" aria-label="Vis 5 flere teknologier">+5</summary>
+                <div class="team-extra-tags"><span class="team-tag">Azure DevOps</span><span class="team-tag">CI/CD</span><span class="team-tag">Finans</span><span class="team-tag">Microservices</span><span class="team-tag">Sikkerhet</span></div>
+              </details>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-person-top">
+              <img class="team-avatar" src="/assets/team/remi-lanza.webp" alt="Portrett av Remi Lanza" loading="lazy" />
+              <div>
+                <h3 class="team-name">Remi Lanza</h3>
+                <div class="team-role">Spesialist, embedded</div>
+              </div>
+            </div>
+            <p class="team-highlight">PhD i numerisk simulering, med spesialfelt i å gjøre tunge ingeniørdata om til 3D-visualisering.</p>
+            <div class="team-tags">
+              <span class="team-tag">C++</span><span class="team-tag">Numeriske metoder</span>
+              
+              <details class="team-more">
+                <summary class="team-tag team-more-trigger" aria-label="Vis 5 flere teknologier">+5</summary>
+                <div class="team-extra-tags"><span class="team-tag">3D-visualisering</span><span class="team-tag">VTK</span><span class="team-tag">OpenGL</span><span class="team-tag">FEM</span><span class="team-tag">Simulering</span></div>
+              </details>
+            </div>
+          </article>
+
+          <article class="team-card team-future-card">
+            <div class="team-person-top">
+              <div class="team-future-icon">+</div>
+              <div>
+                <h3 class="team-name">To nye seniorutviklere</h3>
+                <div class="team-role">Starter hos oss i august</div>
+              </div>
+            </div>
+            <p class="team-highlight">Flere seniorprofiler er på vei inn. Kortet byttes ut med ordinære profilkort når de starter.</p>
+            <div class="team-tags">
+              <span class="team-tag">Seniorutvikling</span>
+              <span class="team-tag">August</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
