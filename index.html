@@ -80,6 +80,9 @@
     .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 0; }
     .brand { display: flex; align-items: center; gap: 14px; }
     .brand img { height: 38px; width: auto; }
+    .brand-logo { content: url('/assets/ametra-logo.svg?v=33'); }
+    html[data-theme="dark"] .brand-logo { content: url('/assets/ametra-logo-gold.svg?v=33'); }
+    html[data-theme="light"] .brand-logo { content: url('/assets/ametra-logo.svg?v=33'); }
     .nav { display: flex; gap: 30px; font-size: 14px; font-weight: 600; color: var(--dark); }
     .nav a:hover { color: var(--ink); }
     .header-actions { display: flex; align-items: center; gap: 10px; }
@@ -551,7 +554,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="#top" class="brand" aria-label="Ametra hjem">
-        <img src="/assets/ametra-logo.svg" alt="Ametra logo" />
+        <img class="brand-logo" src="/assets/ametra-logo.svg?v=33" alt="Ametra logo" />
       </a>
       <nav class="nav" aria-label="Hovedmeny">
         <a href="#leveranser">Hva vi leverer</a>
