@@ -497,9 +497,20 @@
       border-color: rgba(249,195,7,.24);
     }
     .team-more summary::-webkit-details-marker { display: none; }
-    .team-more[open] summary { display: none; }
     .team-extra-tags {
       display: contents;
+    }
+
+    .team-more[open] .team-more-trigger {
+      color: #f4f1e8;
+      background: rgba(249,195,7,.18);
+      border-color: rgba(249,195,7,.38);
+      font-size: 0;
+    }
+    .team-more[open] .team-more-trigger::after {
+      content: "–";
+      font-size: 12px;
+      line-height: 1;
     }
     .team-future-card {
       border-style: dashed;
@@ -519,6 +530,48 @@
       color: rgba(249,195,7,.74);
       background: rgba(249,195,7,.10);
       border: 1px dashed rgba(249,195,7,.28);
+    }
+
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+    .theme-toggle-button {
+      font-size: 18px;
+      line-height: 1;
+      width: 44px;
+      min-width: 44px;
+      height: 44px;
+      padding: 0;
+      font-weight: 800;
+    }
+    html[data-theme="dark"] .theme-toggle-button {
+      background: #242a32 !important;
+      color: #f9c307 !important;
+      border-color: rgba(249,195,7,.30) !important;
+    }
+    html[data-theme="light"] .theme-toggle-button {
+      color: #22252a;
+    }
+    @media (max-width: 880px) {
+      .positioning-section .split {
+        display: flex;
+        flex-direction: column;
+      }
+      .positioning-section .positioning-copy {
+        order: 1;
+      }
+      .positioning-section .photo {
+        order: 2;
+      }
     }
 
     @media (max-width: 880px) {
@@ -720,7 +773,7 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
       <div class="header-actions">
-        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Bytt mellom mørk og lys modus">Mørk</button>
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Bytt mellom mørk og lys modus"><span class="theme-icon moon" aria-hidden="true">☾</span><span class="sr-only">Mørk</span></button>
         <a class="button button-dark header-cta" href="#kontakt">Ta kontakt</a>
       </div>
       <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Åpne meny" />
@@ -767,7 +820,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="positioning-section">
       <div class="container split">
         <div class="photo featured-photo"><img src="/assets/maritim-forsvar.webp" alt="Fergehavn ved fjorden som illustrerer maritim og kritisk infrastruktur" loading="lazy" />
           <div class="photo-overlay">
@@ -775,7 +828,7 @@
             <span>Software tett på produkter, sensorer, edge og operative miljøer.</span>
           </div>
         </div>
-        <div>
+        <div class="positioning-copy">
           <p class="eyebrow">Posisjonering</p>
           <h2>Et supplement til team som bygger krevende teknologi</h2>
           <p class="muted" style="font-size:18px;line-height:1.75">Ametra passer godt inn hos selskaper som utvikler produkter, plattformer og driftsnære løsninger med høye krav til kvalitet, sikkerhet og stabilitet.</p>
@@ -1171,5 +1224,18 @@
       }
     })();
   </script>
+
+  <script>
+    document.addEventListener('click', function (event) {
+      const teamCard = event.target.closest('.team-card');
+      if (!teamCard) return;
+      const openDetails = teamCard.querySelector('.team-more[open]');
+      if (!openDetails) return;
+      if (event.target.closest('.team-more-trigger')) return;
+      if (event.target.closest('.team-extra-tags')) return;
+      openDetails.open = false;
+    });
+  </script>
+
 </body>
 </html>
