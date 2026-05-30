@@ -773,7 +773,7 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
       <div class="header-actions">
-        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Bytt mellom mørk og lys modus"><span class="theme-icon moon" aria-hidden="true">☾</span><span class="sr-only">Mørk</span></button>
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Bytt mellom mørk og lys modus" aria-label="Bytt mellom lys og mørk modus">⏾</button>
         <a class="button button-dark header-cta" href="#kontakt">Ta kontakt</a>
       </div>
       <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Åpne meny" />
@@ -1235,6 +1235,24 @@
       if (event.target.closest('.team-extra-tags')) return;
       openDetails.open = false;
     });
+  </script>
+
+
+  <script>
+    (function () {
+      const btn = document.querySelector('.theme-toggle-button');
+      if (!btn) return;
+      function syncThemeIcon() {
+        const theme = document.documentElement.getAttribute('data-theme') || 'light';
+        btn.textContent = theme === 'dark' ? '☀' : '⏾';
+        btn.setAttribute('aria-label', theme === 'dark' ? 'Bytt til lys modus' : 'Bytt til mørk modus');
+      }
+      syncThemeIcon();
+      btn.addEventListener('click', function () {
+        setTimeout(syncThemeIcon, 0);
+      });
+      new MutationObserver(syncThemeIcon).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    })();
   </script>
 
 </body>
