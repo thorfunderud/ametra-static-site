@@ -85,6 +85,22 @@
     .nav { display: flex; gap: 30px; font-size: 14px; font-weight: 600; color: var(--dark); }
     .nav a:hover { color: var(--ink); }
     .header-actions { display: flex; align-items: center; gap: 10px; }
+
+    .theme-svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .theme-sun { display: none; }
+    .theme-moon { display: block; }
+    html[data-theme="dark"] .theme-sun { display: block; }
+    html[data-theme="dark"] .theme-moon { display: none; }
+
     .theme-toggle-button {
       display: inline-flex;
       align-items: center;
@@ -224,6 +240,21 @@
     .industry-focus article { border-left: 4px solid var(--gold); background: white; border-radius: 18px; padding: 18px 20px; box-shadow: 0 2px 8px rgba(34,37,42,.04); }
     .industry-focus h3 { font-size: 18px; margin-bottom: 6px; }
     .industry-focus p { margin: 0; color: var(--muted); line-height: 1.6; }
+
+    .industry-focus article {
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .industry-focus article:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+      border-left-color: var(--gold-dark);
+    }
+    html[data-theme="dark"] .industry-focus article:hover {
+      background: #2c333d !important;
+      border-color: rgba(249,195,7,.38) !important;
+      border-left-color: #f9c307 !important;
+      box-shadow: 0 22px 60px rgba(0,0,0,.32) !important;
+    }
 
     .experience-group { margin-top: 42px; }
     .experience-group:first-of-type { margin-top: 0; }
@@ -772,7 +803,7 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
       <div class="header-actions">
-        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Bytt mellom mørk og lys modus" aria-label="Bytt mellom lys og mørk modus">⏾</button>
+        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Bytt mellom mørk og lys modus" aria-label="Bytt mellom lys og mørk modus"><span class="theme-icon-wrap"><svg class="theme-svg theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.99 11.36A8.5 8.5 0 1 1 12.64 3a6.5 6.5 0 0 0 8.35 8.36Z"></path></svg><svg class="theme-svg theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span><span class="sr-only">Bytt tema</span></button>
         <a class="button button-dark header-cta" href="#kontakt">Ta kontakt</a>
       </div>
       <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Åpne meny" />
@@ -901,8 +932,8 @@
             <article class="case-card">
               <div>
                 <span class="case-domain">Luftfart</span>
-                <h4>HMI i sikkerhetskritisk miljø</h4>
-                <p>Arbeid med sentrale komponenter i et flytårn-system med strenge krav til stabilitet, oppetid og lang levetid. Bidro til bedre verifisering og testbarhet, og dermed mer forutsigbare leveranser.</p>
+                <h4>Algoritmer og HMI for flyplasskontrollsystemer</h4>
+                <p>Utvikling av sentrale server- og klientkomponenter for beregning, behandling og visualisering av taxi-ruter for fly mellom stand og rullebane, inkludert støtteverktøy for flyplasspesifikk konfigurasjon. Arbeidet omfattet algoritmer, alarmhåndtering og videreutvikling i en stor kodebase med høye krav til stabilitet, testbarhet og lang levetid.</p>
               </div>
               <p class="case-tech">C/C++ · Linux · Qt · SQL</p>
             </article>
@@ -1135,10 +1166,10 @@
               <img class="team-avatar" src="/assets/team/remi-lanza.webp" alt="Portrett av Remi Lanza" loading="lazy" />
               <div>
                 <h3 class="team-name">Remi Lanza</h3>
-                <div class="team-role">Spesialist, embedded</div>
+                <div class="team-role">Senior systemutvikler</div>
               </div>
             </div>
-            <p class="team-highlight">PhD i numerisk simulering, med spesialfelt i å gjøre tunge ingeniørdata om til 3D-visualisering.</p>
+            <p class="team-highlight">PhD i datamodellering og interoperabilitet for ingeniørdata, med 10 års erfaring som C++ fullstack-utvikler og tyngde innen numeriske simuleringer og 3D-visualisering.</p>
             <div class="team-tags">
               <span class="team-tag">C++</span>
               <span class="team-tag">Qt</span>
@@ -1197,60 +1228,15 @@
 
   <script>
     (function () {
-      var storageKey = "ametra-theme";
-      var root = document.documentElement;
-      var button = document.querySelector("[data-theme-toggle]");
-      var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      var savedTheme = null;
-      try { savedTheme = localStorage.getItem(storageKey); } catch (e) {}
-
-      function applyTheme(theme) {
-        root.setAttribute("data-theme", theme);
-        if (button) {
-          button.textContent = theme === "dark" ? "Lys" : "Mørk";
-          button.setAttribute("aria-label", theme === "dark" ? "Bytt til lys modus" : "Bytt til mørk modus");
-        }
-      }
-
-      applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
-
-      if (button) {
-        button.addEventListener("click", function () {
-          var nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-          applyTheme(nextTheme);
-          try { localStorage.setItem(storageKey, nextTheme); } catch (e) {}
-        });
-      }
-    })();
-  </script>
-
-  <script>
-    document.addEventListener('click', function (event) {
-      const teamCard = event.target.closest('.team-card');
-      if (!teamCard) return;
-      const openDetails = teamCard.querySelector('.team-more[open]');
-      if (!openDetails) return;
-      if (event.target.closest('.team-more-trigger')) return;
-      if (event.target.closest('.team-extra-tags')) return;
-      openDetails.open = false;
-    });
-  </script>
-
-
-  <script>
-    (function () {
       const btn = document.querySelector('.theme-toggle-button');
       if (!btn) return;
-      function syncThemeIcon() {
+      function syncThemeIconLabel() {
         const theme = document.documentElement.getAttribute('data-theme') || 'light';
-        btn.textContent = theme === 'dark' ? '☀' : '⏾';
         btn.setAttribute('aria-label', theme === 'dark' ? 'Bytt til lys modus' : 'Bytt til mørk modus');
       }
-      syncThemeIcon();
-      btn.addEventListener('click', function () {
-        setTimeout(syncThemeIcon, 0);
-      });
-      new MutationObserver(syncThemeIcon).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+      syncThemeIconLabel();
+      btn.addEventListener('click', function () { setTimeout(syncThemeIconLabel, 0); });
+      new MutationObserver(syncThemeIconLabel).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
     })();
   </script>
 
