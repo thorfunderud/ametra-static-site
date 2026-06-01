@@ -86,21 +86,6 @@
     .nav a:hover { color: var(--ink); }
     .header-actions { display: flex; align-items: center; gap: 10px; }
 
-    .theme-svg {
-      width: 20px;
-      height: 20px;
-      display: block;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .theme-sun { display: none; }
-    .theme-moon { display: block; }
-    html[data-theme="dark"] .theme-sun { display: block; }
-    html[data-theme="dark"] .theme-moon { display: none; }
-
     .theme-toggle-button {
       display: inline-flex;
       align-items: center;
@@ -591,6 +576,37 @@
     html[data-theme="light"] .theme-toggle-button {
       color: #22252a;
     }
+
+    .theme-toggle-button {
+      width: 44px;
+      min-width: 44px;
+      height: 44px;
+      padding: 0;
+      display: inline-grid;
+      place-items: center;
+    }
+    .theme-icon-wrap {
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+    }
+    .theme-svg {
+      grid-area: 1 / 1;
+      width: 21px;
+      height: 21px;
+      display: block;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .theme-sun { display: none; }
+    .theme-moon { display: block; }
+    html[data-theme="dark"] .theme-sun { display: block; }
+    html[data-theme="dark"] .theme-moon { display: none; }
+
     @media (max-width: 880px) {
       .positioning-section .split {
         display: flex;
@@ -803,7 +819,9 @@
         <a href="#kontakt">Kontakt</a>
       </nav>
       <div class="header-actions">
-        <button class="theme-toggle-button" type="button" data-theme-toggle aria-label="Bytt mellom mørk og lys modus" aria-label="Bytt mellom lys og mørk modus"><span class="theme-icon-wrap"><svg class="theme-svg theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.99 11.36A8.5 8.5 0 1 1 12.64 3a6.5 6.5 0 0 0 8.35 8.36Z"></path></svg><svg class="theme-svg theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span><span class="sr-only">Bytt tema</span></button>
+        <button class="theme-toggle-button" type="button" aria-label="Bytt til mørk modus">
+            <span class="theme-icon-wrap"><svg class="theme-svg theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg><svg class="theme-svg theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span>
+          </button>
         <a class="button button-dark header-cta" href="#kontakt">Ta kontakt</a>
       </div>
       <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Åpne meny" />
@@ -1229,14 +1247,31 @@
   <script>
     (function () {
       const btn = document.querySelector('.theme-toggle-button');
-      if (!btn) return;
-      function syncThemeIconLabel() {
-        const theme = document.documentElement.getAttribute('data-theme') || 'light';
+      const root = document.documentElement;
+      if (!btn || !root) return;
+
+      function currentTheme() {
+        return root.getAttribute('data-theme') || 'light';
+      }
+
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        try { localStorage.setItem('ametra-theme', theme); } catch (e) {}
         btn.setAttribute('aria-label', theme === 'dark' ? 'Bytt til lys modus' : 'Bytt til mørk modus');
       }
-      syncThemeIconLabel();
-      btn.addEventListener('click', function () { setTimeout(syncThemeIconLabel, 0); });
-      new MutationObserver(syncThemeIconLabel).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+      const saved = (() => {
+        try { return localStorage.getItem('ametra-theme'); } catch (e) { return null; }
+      })();
+      if (saved === 'dark' || saved === 'light') {
+        applyTheme(saved);
+      } else {
+        applyTheme(currentTheme());
+      }
+
+      btn.addEventListener('click', function () {
+        applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+      });
     })();
   </script>
 
