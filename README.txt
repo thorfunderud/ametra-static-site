@@ -41,3 +41,7 @@ Switch canonical/OG URLs back to https://ametra.no/ before production.
 
 
 v29: Dark mode refined with premium contrast, layered surfaces, and dark positioning cards.
+
+
+PRODUCTION NOTE:
+This package is configured for https://ametra.no/
