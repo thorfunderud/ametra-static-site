@@ -79,10 +79,10 @@
     .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 0; }
     .brand { display: flex; align-items: center; gap: 14px; }
     .brand img { height: 42px; width: auto; display: block; }
-    .brand-logo { content: url('/assets/ametra-logo.svg?v=33'); }
-    html[data-theme="dark"] .brand-logo { content: url('/assets/ametra-logo-gold.svg?v=33'); }
-    html[data-theme="dark"] .brand-logo { content: url('/assets/ametra-logo.svg?v=33'); }
-    html[data-theme="light"] .brand-logo { content: url('/assets/ametra-logo.svg?v=33'); }
+    .brand-logo { content: url('/assets/ametra-logo.svg?v=60'); }
+    html[data-theme="dark"] .brand-logo { content: url('/assets/ametra-logo-gold.svg?v=60'); }
+    html[data-theme="dark"] .brand-logo { content: url('/assets/ametra-logo-gold.svg?v=60'); }
+    html[data-theme="light"] .brand-logo { content: url('/assets/ametra-logo.svg?v=60'); }
     .nav { display: flex; gap: 30px; font-size: 14px; font-weight: 600; color: var(--dark); }
     .nav a:hover { color: var(--ink); }
     .header-actions { display: flex; align-items: center; gap: 10px; }
@@ -805,6 +805,12 @@
       html:not([data-theme="light"]) .industry-focus p { color: rgba(244,241,232,.72) !important; }
     }
 
+  
+    /* Logo color override: dark mode gold, light mode dark */
+    .brand-logo { content: url('/assets/ametra-logo.svg?v=60') !important; }
+    html[data-theme="dark"] .brand-logo { content: url('/assets/ametra-logo-gold.svg?v=60') !important; }
+    html[data-theme="light"] .brand-logo { content: url('/assets/ametra-logo.svg?v=60') !important; }
+
   </style>
 </head>
 <body>
@@ -1201,6 +1207,26 @@
             </div>
           </article>
 
+
+          <article class="team-card">
+            <div class="team-person-top">
+              <img class="team-avatar" src="/assets/team/steffen-loen-sunde.webp" alt="Portrett av Steffen Loen Sunde" loading="lazy" />
+              <div>
+                <h3 class="team-name">Steffen Loen Sunde</h3>
+                <div class="team-role">Senior systemutvikler</div>
+              </div>
+            </div>
+            <p class="team-highlight">PhD fra NTNU med solid erfaring innen fullstack-utvikling, beregningsprogramvare, visualisering og datatunge applikasjoner.</p>
+            <div class="team-tags">
+              <span class="team-tag">Python</span>
+              <span class="team-tag">C++</span>
+
+              <details class="team-more">
+                <summary class="team-tag team-more-trigger" aria-label="Vis 6 flere teknologier">+6</summary>
+                <div class="team-extra-tags"><span class="team-tag">Rust</span><span class="team-tag">TypeScript</span><span class="team-tag">React</span><span class="team-tag">WebGL</span><span class="team-tag">FEM</span><span class="team-tag">Beregningsprogramvare</span></div>
+              </details>
+            </div>
+          </article>
           <article class="team-card team-future-card">
             <div class="team-person-top">
               <div class="team-future-icon">+</div>
